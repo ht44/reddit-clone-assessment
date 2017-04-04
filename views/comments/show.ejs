@@ -5,12 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="/style.css">
-  <title>Home</title>
+  <title>View Comment</title>
 </head>
 <body>
-  <h1>Welcome to Reddit (the clone)</h1>
-  <p><a href="/users">Show All Users</a></p>
-  <p><a href="/users/new">Create New User</a></p>
-  <p><a href="/posts">Show All Posts</a></p>
+  <h1>LOOKING AT COMMENT</h1>
+  <h1>By <%= result.user_id %> on post <%= result.post_id %></h1>
+  <p><%= result.content %> </p>
+  <p><a href="/">Home</a></p>
+  <p><a href="/posts">Posts</a></p>
 </body>
 </html>

@@ -12,8 +12,29 @@
   <img src="<%= result.img_url %>" alt="">
   <h2><%= result.full_name %> </h2>
   <h3>USER ID: <%= result.id %></h3>
+  <h4>POSTS: </h4>
+  <ul>
+    <% posts.forEach(post => { %>
+      <li>
+        <a href="/users/<%= result.id %>/posts/<%= post.id %>/edit">
+          EDIT <%= post.title %>
+        </a>
+      </li>
+    <% }); %>
+  </ul>
+  <h4>COMMENTS: </h4>
+  <ul>
+    <% comments.forEach(comment => { %>
+      <li>
+        <a href="/users/<%= result.id %>/comments/<%= comment.id %>/edit">
+          EDIT <%= comment.content %>
+        </a>
+      </li>
+    <% }); %>
+  </ul>
   <p><a href="/">Home</a></p>
   <p><a href="/users">Users</a></p>
   <p><a href="/users/<%= result.id %>/edit">Edit</a></p>
+  <p><a href="/users/<%= result.id %>/posts/new">Post</a></p>
 </body>
 </html>

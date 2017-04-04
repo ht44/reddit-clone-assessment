@@ -10,6 +10,14 @@ router.route('/')
     });
   })
 
+  .post((req, res) => {
+    knex('users').insert(req.body.user)
+    .returning('id')
+    .then(id => {
+      res.redirect(`users/${id}`);
+    });
+  })
+
 router.route('/new')
 
   .get((req, res) => {
@@ -21,12 +29,19 @@ router.route('/:user_id')
   .get((req, res) => {
     var userId = parseInt(req.params.user_id, 10);
     knex('users').where('id', userId).then(result => {
-      res.render('users/show', {result: result[0]});
+      knex('posts').where('user_id', userId).then(posts => {
+        knex('comments').where('user_id', userId).then(comments => {
+          res.render('users/show', {
+            result: result[0],
+            posts: posts,
+            comments: comments
+          });
+        });
+      });
     });
   })
 
   .put((req, res) => {
-    console.log('U GOT AEEEEN');
     var userId = parseInt(req.params.user_id, 10);
     knex('users').where('id', userId).update(req.body.user)
     .returning('id')

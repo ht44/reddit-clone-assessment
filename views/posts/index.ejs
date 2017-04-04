@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="/style.css">
+  <title>All Posts</title>
+</head>
+<body>
+  <h1>GOT TO POSTS PAGE</h1>
+
+  <ul>
+    <% results.forEach(result => { %>
+      <li>
+        <a href="/posts/<%= result.id %>">
+          <%= result.title %>
+        </a>
+      </li>
+    <% }); %>
+  </ul>
+  <p><a href="/">Home</a></p>
+  <p><a href="/users">Users</a></p>
+</body>
+</html>
