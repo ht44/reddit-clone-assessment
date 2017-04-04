@@ -13,13 +13,16 @@
     <% results.forEach(result => { %>
       <li>
         <p>
-          <%= result.content %>
+          <a href="/comments/<%= result.id %>">
+            <%= result.content %>
+          </a>
         </p>
         <p>USER: <%= result.user_id %> </p>
         <p>POST: <%= result.post_id %> </p>
       </li>
     <% }); %>
   </ul>
+  <p><a href="/">Home</a></p>
 
 </body>
 </html>

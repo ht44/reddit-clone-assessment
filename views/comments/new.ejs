@@ -8,7 +8,7 @@
   <title>Leave Comment</title>
 </head>
 <body>
-  <h1>COOKIN W GASSSSSSSSSSSS</h1>
+  <h1>Leave Comment</h1>
   <form action="/posts/<%= id %>/comments" method="POST">
     <input type="hidden" name="comment[post_id]" value="<%= id %>">
     <label for="user-id">User Id: </label>
@@ -16,5 +16,6 @@
     <textarea name="comment[content]" rows="8" cols="80"></textarea>
     <input type="submit">
   </form>
+  <p><a href="/">Home</a></p>
 </body>
 </html>

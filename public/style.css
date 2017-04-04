@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
-h1, h2, h3, p, li {
+h1, h2, h3, h4, p, li, label {
   font-family: 'Roboto', sans-serif;
 }
 
